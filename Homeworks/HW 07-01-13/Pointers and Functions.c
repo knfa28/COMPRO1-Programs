@@ -1,0 +1,118 @@
+/********************************************************************************
+Program name: Pointers and Functions
+
+Programmed by: Kurt Aquino
+Section: S21A
+
+Last edited on: 06/29/2013
+
+This program will let the user rotate the order of a set of numbers clockwise or
+counterclockwise.
+********************************************************************************/
+
+#include<stdio.h>
+
+/* displays stars */
+void stars()
+{
+	printf("*********************************************************\n");
+}
+
+/* rotates the order of the set clockwise */
+void toClockwise(int *nOne, int *nTwo, int *nThree, int *nFour)
+{
+	/* variable for temporarily storing another variable */
+	int nTemp;
+	
+	/* switches the values of the different variables */
+	nTemp = *nThree;
+	*nThree = *nFour;
+	*nFour = *nTwo;
+	*nTwo = *nOne;
+	*nOne = nTemp;
+}
+
+/* rotates the order of the set counterclockwise */
+void toCtrClockwise(int *nOne, int *nTwo, int *nThree, int *nFour)
+{
+	/* variable for temporarily storing another variable */
+	int nTemp;
+	
+	/* switches the values of the different variables */
+	nTemp = *nOne;
+	*nOne = *nTwo;
+	*nTwo = *nFour;
+	*nFour = *nThree;
+	*nThree = nTemp;
+}
+
+int main()
+{
+	/* variable declaration */
+	int nOne=1, nTwo=2, nThree=3, nFour=4,
+       nChoice , nCtr, nRot;
+	char cNull;
+	
+	/* displays stars */
+	stars();
+		
+	/* asks the user how many time(s)he wants to rotate the set */
+	printf("How many times doy uo want to rotate the set? ");
+	scanf("%d", &nRot);
+	
+	/* loops the function twice */
+	for(nCtr = 0; nCtr < nRot; nCtr++)
+	{
+	   /* asks for user input */
+       switch(nCtr)
+       {
+       	case 1: 		   
+		   printf("Once more: Press 1 for clockwise or 2 for counter clockwise: ");
+		   break;
+
+       	default:
+		   printf("Press 1 for clockwise or 2 for counter clockwise: ");
+       }
+       	
+	   /* checks whether input value is valid or not */
+	   do
+	   {
+	       scanf("%d%c", &nChoice, &cNull);
+	       if(nChoice < 1 || nChoice > 2)
+	       
+	          /* displays error message */
+	          printf("Please choose either 1 or 2 only: ");	
+			      
+	   }while (nChoice < 1 || nChoice > 2);
+	   	   
+	   /* checks whether the user wants to rotate the order clockwise or
+	   counter clockwise */
+	   if (nChoice == 1)
+	   {	      
+		  /* calls the clockwise function */
+		  toClockwise(&nOne, &nTwo, &nThree, &nFour);
+		  
+		  /* displays results */
+		  printf("\n%d   %d\n"
+               "%d   %d\n\n",
+			      nOne, nTwo, nThree, nFour);
+	   }
+	  
+	   else if (nChoice == 2)
+	   {
+		  
+		  /* calls the counter clockwise function */
+		  toCtrClockwise(&nOne, &nTwo, &nThree, &nFour);
+		  
+		  /* displays results */
+		  printf("\n%d   %d\n"
+               "%d   %d\n\n",
+			      nOne, nTwo, nThree, nFour);
+	   }
+	}
+    
+	/* displays stars */
+	stars();
+    
+	return 0;          
+}

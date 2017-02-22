@@ -1,0 +1,33 @@
+/*******************************************************************************
+Program name: Chapter 3 Exercise 4
+
+Programmed by: Kurt Aquino
+Section: S21A
+
+Last edited on: 06/20/2013
+
+This program will reverse an input of a three digit number, while retaining
+it as a whole.
+*******************************************************************************/
+
+#include<stdio.h>
+
+int main()
+{
+	/* variable declaration */
+	char cNum1, cNum2, cNum3, cTemp;
+	
+	/* asks for user input */
+	printf("Please input a three digit number: ");
+	scanf("%c%c%c", &cNum1, &cNum2, &cNum3);
+	
+	/* reverses the order of the three digit number */
+	cTemp = cNum1;
+	cNum1 = cNum3;
+	cNum3 = cTemp;
+	
+	/* displays result */
+	printf("\nThe reversed number is %c%c%c", cNum1, cNum2, cNum3);
+	
+	return 0;
+}

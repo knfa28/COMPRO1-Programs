@@ -1,0 +1,90 @@
+/*******************************************************************************
+Program Name: Currency 2
+        
+Programmed by: Kurt Aquino
+Section: S21A
+
+Last Edited on: 06/17/2013
+*******************************************************************************/
+
+#include <stdio.h>
+
+/* asks for user input */
+float getInput()
+{
+     float fPeso;
+     printf("**********CURRENCY CONVERT**********\n"
+            "Please input an amount in Peso: \n");
+     scanf("%f", &fPeso);
+     return fPeso;
+}
+
+/* converts to USD */
+float toUSD(float fPeso)
+{
+      float fUSD;
+      fUSD = fPeso * 0.02323;
+      return fUSD;
+}
+
+/* converts to Euro */
+float toEuro(float fPeso)
+{
+      float fEuro;
+      fEuro = fPeso * 0.01740;
+      return fEuro;
+}
+
+/* converts to JPY */
+float toJPY(float fPeso)
+{
+      float fJPY;
+      fJPY = fPeso * 2.21785;
+      return fJPY;
+}
+
+/* converts to GBP */
+float toGBP(float fPeso)
+{
+      float fGBP;
+      fGBP = fPeso * 0.01481;
+      return fGBP;
+}
+
+/* converts to CHF */
+float toCHF(float fPeso)
+{
+      float fCHF;
+      fCHF = fPeso * 0.02136;
+      return fCHF ;
+}
+
+/* displays result */
+void displayResult(float fPeso)
+{    
+     printf("Converting... Done!\n"
+            "In USD: %c%.2f\n"
+            "In Euro: %c%.2f\n"
+            "In JPY: %c%.2f\n"
+            "In GBP: %c%.2f\n"
+            "In CHF: %c%.2f\n"
+            "************************************\n", /* display closing design */
+            36, toUSD(fPeso),
+            238, toEuro(fPeso),
+            157, toJPY(fPeso),
+            156, toGBP(fPeso),
+            159, toCHF(fPeso));
+}
+ 
+int main()
+{
+    /* variable declaration */
+    float fPeso;
+    fPeso = getInput();
+    
+    /* calls the function to display the results */
+    displayResult(fPeso);
+    
+    system("pause");
+    return 0;
+}

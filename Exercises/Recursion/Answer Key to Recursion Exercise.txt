@@ -1,0 +1,40 @@
+Answer Key to Pair Exercise on Recursion:
+
+A.) 
+*
+10*
+11*
+12*
+12*
+12*
+13*
+14*
+
+B.)
+int Racker (int m, int n)
+{
+    if (m == 0)
+      return n+1;
+    else if (n == 0)
+      return Racker(m-1, 1);
+    else return Racker(m-1, Racker(m, n-1));
+}
+
+C.) 5
+
+D.) 
+int getDivisor(int nDigits)
+{
+   if (nDigits <= 1)
+      return 1;
+   else return 10 * getDivisor(nDigits-1);
+}
+
+int isPalindrome(int nNum, int nDigits)
+{
+   if (nDigits == 1)
+      return 1;
+   else if (nNum % 10 != nNum / getDivisor(nDigits))
+      return 0;
+   else return isPalindrome(nNum % getDivisor(nDigits) / 10, nDigits - 2);
+}

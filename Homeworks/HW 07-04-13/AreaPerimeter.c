@@ -1,0 +1,51 @@
+/*******************************************************************************
+Program name: Area and Perimter
+
+Programmed by: Kurt Aquino
+Section: S21A
+
+Last edited on: 07/02/2013
+
+This program will ask the user for the length and width of a rectangle and then 
+asks if (s)he wants to compute for its area or perimeter.
+*******************************************************************************/
+#include<stdio.h>
+
+/* computes for the area of the given length and width */
+float computeArea(float fLength, float fWidth) 
+{
+	return(fLength * fWidth);
+}
+
+/* computes for the perimeter of the given length and width */
+float computePerimeter(float fLength, float fWidth)
+{
+	return(2 * fLength + 2 * fWidth);
+}
+
+int main()
+{
+	/* variable declaration */
+	float fLength, fWidth;
+	char cAns, cNull;
+	
+	/* asks for user input */
+	printf("Length: ");
+	scanf("%f", &fLength);
+	printf("Width: ");
+	scanf("%f", &fWidth);
+	
+	/* asks if the user wants to compute for the area or perimeter */
+	printf("[A]rea or [P]erimiter: ");
+	scanf("%c%c", &cNull, &cAns);
+	
+	if(cAns == 'a' || cAns == 'A')
+	   /* displays the area of the given length and width */
+	   printf("Area is %.2f", computeArea(fLength, fWidth));
+	
+	else if (cAns == 'p' || cAns == 'P')
+	   /* displays the perimeter of the given length and width */
+	   printf("Perimeter is %.2f", computePerimeter(fLength, fWidth));
+	    
+	return 0;
+}

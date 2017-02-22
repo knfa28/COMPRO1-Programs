@@ -1,0 +1,69 @@
+/*******************************************************************************
+Program Name: ASCII Art
+        
+Programmed by: Kurt Aquino
+Section: S21A
+
+Last Edited on: 06/17/2013
+*******************************************************************************/
+
+#include <stdio.h>
+
+/* displays the ASCII Art for K */
+void displayK()
+{
+	printf("K   K\n"
+	       "K  K \n"
+	       "KKK  \n"
+	       "K  K \n"
+	       "K   K\n"
+	       "\n\n");
+	
+}
+
+/* displays the ASCII Art for U */
+void displayU()
+{
+	printf("U   U\n"
+	       "U   U\n"
+	       "U   U\n"
+	       "U   U\n"
+	       " UUU \n"
+	       "\n\n");
+}
+
+/* displays the ASCII Art for R*/
+void displayR()
+{
+	printf("RRRR \n"
+	       "R   R\n"
+	       "RRRR \n"
+	       "R   R\n"
+	       "R   R\n"
+	       "\n\n");
+}
+
+/* displays the ASCII Art for T */
+void displayT()
+{
+	printf("TTTTT\n"
+	       "  T  \n"
+	       "  T  \n"
+	       "  T  \n"
+	       "  T  \n"
+	       "\n\n");
+}
+
+
+int main()
+{
+    /* calls the functions to display the 
+	ASCII Arts for K, U, R, and T */
+	displayK();
+	displayU();
+	displayR();
+	displayT();  
+	   
+	system("pause");   
+    return 0;
+}
